@@ -17,15 +17,29 @@ export default {
   },
   methods: {
     send() {
-      let sentMessages = this.$globalData.data.messages;
-      this.form.date = Date.now();
-      sentMessages.unshift(Object.assign({}, this.form));
-      this.clearForm(this.form);
+      if (this.validated(this.form)) {
+        let sentMessages = this.$globalData.data.messages;
+        this.form.date = Date.now();
+        sentMessages.unshift(Object.assign({}, this.form));
+        this.clearForm(this.form);
+      }
     },
+    // HELPER
     clearForm(form) {
       form.friendType = "";
       form.message = "";
       form.date = null;
+    },
+
+    validated(form) {
+      if (form.friendType == "") {
+        window.alert("카테고리를 선택해주세요");
+        return false;
+      } else if (form.message == "") {
+        window.alert("메세지를 입력해주세요");
+        return false;
+      }
+      return true;
     }
   }
 };
