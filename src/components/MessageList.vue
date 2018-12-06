@@ -3,6 +3,7 @@
     <div class="message" v-for="message of data.messages" :key="message.id">
       <div class="friend-type">{{ message.friendType | toKorean }}</div>
       <div class="message-content">{{ message.message }}</div>
+      <div class="date">{{ message.date | localDate }}</div>
     </div>
   </div>
 </template>
@@ -25,6 +26,9 @@ export default {
       } else if (value === "family") {
         return "가족";
       }
+    },
+    localDate(value) {
+      return new Date(value).toLocaleTimeString("kr-KO");
     }
   }
 };
@@ -49,5 +53,10 @@ export default {
 
 .message-content {
   text-align: left;
+}
+
+.date {
+  font-size: 10px;
+  text-align: right;
 }
 </style>
