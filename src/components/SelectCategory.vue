@@ -6,7 +6,6 @@
       <option value="friend">친구</option>
       <option value="family">가족</option>
     </select>
-    hi
   </div>
 </template>
 
@@ -22,4 +21,8 @@ export default {
 </script>
 
 <style scoped>
+.category {
+  margin: 10px;
+  margin-bottom: 50px;
+}
 </style>
