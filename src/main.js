@@ -11,7 +11,7 @@ Vue.prototype.$globalData = {
   },
 
   data: {
-    messages: []
+    messages: [{ id: '1', friendType: 'friend', message: 'hi' }]
   }
 
 }
