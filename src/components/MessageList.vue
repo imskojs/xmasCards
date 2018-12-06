@@ -53,6 +53,7 @@ export default {
 
 .message-content {
   text-align: left;
+  white-space: pre-line;
 }
 
 .date {
