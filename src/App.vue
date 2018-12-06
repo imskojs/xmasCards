@@ -1,16 +1,19 @@
 <template>
   <div id="app">
     <SelectCategory :friendTypes="[ '동료', '친구', '가족' ]"/>
+    <MessageArea/>
   </div>
 </template>
 
 <script>
 import SelectCategory from "./components/SelectCategory.vue";
+import MessageArea from "./components/MessageArea.vue";
 
 export default {
   name: "app",
   components: {
-    SelectCategory
+    SelectCategory,
+    MessageArea
   }
 };
 </script>
