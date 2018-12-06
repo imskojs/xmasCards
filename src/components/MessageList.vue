@@ -1,6 +1,6 @@
 <template>
   <div class="message-list">
-    <div class="message" v-for="message of data.messages" :key="message.id">
+    <div class="message" v-for="message of data.messages" :key="message.date">
       <div class="friend-type">{{ message.friendType | toKorean }}</div>
       <div class="message-content">{{ message.message }}</div>
       <div class="date">{{ message.date | localDate }}</div>
