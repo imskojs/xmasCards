@@ -1,8 +1,8 @@
 <template>
   <div class="message-list">
     <div class="message" v-for="message of data.messages" :key="message.id">
-      <div class="friend-type">{{ message.friendType }}</div>
-      <div class="message">{{ message.message }}</div>
+      <div class="friend-type">{{ message.friendType | toKorean }}</div>
+      <div class="message-content">{{ message.message }}</div>
     </div>
   </div>
 </template>
@@ -14,13 +14,40 @@ export default {
     return {
       data: this.$globalData.data
     };
+  },
+  filters: {
+    toKorean(value) {
+      if (!value) return "";
+      if (value === "friend") {
+        return "친구";
+      } else if (value === "colleage") {
+        return "동료";
+      } else if (value === "family") {
+        return "가족";
+      }
+    }
   }
 };
 </script>
 
 <style scoped>
-.message-area {
+.message-list {
   width: 600px;
-  height: 300px;
+}
+.message {
+  background-color: rgba(37, 99, 172, 0.5);
+  margin: 8px;
+  padding: 2px;
+}
+
+.friend-type {
+  padding-left: 5px;
+  padding-top: 5px;
+  text-align: left;
+  font-weight: bold;
+}
+
+.message-content {
+  text-align: left;
 }
 </style>

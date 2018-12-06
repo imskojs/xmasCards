@@ -2,7 +2,9 @@
   <div id="app">
     <SelectCategory :friendTypes="[ '동료', '친구', '가족' ]"/>
     <MessageArea/>
-    <MessageList/>
+    <div class="message-list-container">
+      <MessageList/>
+    </div>
   </div>
 </template>
 
@@ -29,5 +31,10 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+.message-list-container {
+  display: flex;
+  justify-content: center;
 }
 </style>

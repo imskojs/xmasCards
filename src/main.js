@@ -7,7 +7,8 @@ Vue.prototype.$globalData = {
 
   form: {
     friendType: '',
-    message: ''
+    message: '',
+    date: null
   },
 
   data: {
