@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <SelectCategory :friendTypes="[ '동료', '친구', '가족' ]"/>
+    <SelectCategory/>
     <MessageArea/>
     <div class="message-list-container">
       <MessageList/>
